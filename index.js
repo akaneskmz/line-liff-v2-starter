@@ -10,7 +10,7 @@ app.use(express.static('public'));
 app.get('/cookie-test', function(req, res) {
     console.log(req.cookies);
     res.cookie(Math.random().toString(36).slice(-8), Math.random().toString(36).slice(-8));
-    res.send("ok");
+    res.send(req.cookies);
 });
 
 app.get('/send-id', function(req, res) {
