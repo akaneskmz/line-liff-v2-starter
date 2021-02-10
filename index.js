@@ -8,6 +8,7 @@ app.use(cookieParser());
 app.use(express.static('public'));
 
 app.get('/cookie-test', function(req, res) {
+    console.log(req.headers);
     console.log(req.cookies);
     res.cookie(Math.random().toString(36).slice(-8), Math.random().toString(36).slice(-8));
     res.send(req.cookies);
